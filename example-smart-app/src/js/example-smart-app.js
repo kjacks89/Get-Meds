@@ -14,7 +14,7 @@
         //alert(patientID);
         
         function getOrders(patientID) {
-          alert(patientID);
+          //alert(patientID);
           alert("IT WAS CALLED");
           var xmlhttp = new XMLHttpRequest();
           xmlhttp.onreadystatechange = function() {
