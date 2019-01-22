@@ -115,7 +115,7 @@
     }
   }
   */
-
+  /*
   window.drawVisualization = function(p) {
     $('#holder').show();
     $('#loading').hide();
@@ -129,5 +129,5 @@
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
   };
-
+  */
 })(window);
