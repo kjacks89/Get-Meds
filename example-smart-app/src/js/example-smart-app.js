@@ -10,7 +10,7 @@
     function onReady(smart)  {
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
-        console.log(JSON.stringify(patient.id));
+        console.log(patient.id);
         
         function getOrders(patient) {
           var xmlhttp = new XMLHttpRequest();
