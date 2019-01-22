@@ -11,7 +11,7 @@
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         console.log(JSON.stringify(patient));
-        /*
+        
         function getOrders(patient) {
           var xmlhttp = new XMLHttpRequest();
           xmlhttp.onreadystatechange = function() {
@@ -30,7 +30,7 @@
           xmlhttp.setRequestHeader("Accept", "application/json+fhir", true)
           xmlhttp.send();
         }
-        */
+        
         var pt = patient.read();
         var obv = smart.patient.api.fetchAll({
                     type: 'Observation',
@@ -56,7 +56,7 @@
             fname = patient.name[0].given.join(' ');
             lname = patient.name[0].family.join(' ');
           }
-          /*
+          
           var height = byCodes('8302-2');
           var systolicbp = getBloodPressureValue(byCodes('55284-4'),'8480-6');
           var diastolicbp = getBloodPressureValue(byCodes('55284-4'),'8462-4');
@@ -81,7 +81,7 @@
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
           
-          ret.resolve(p);*/
+          ret.resolve(p);
         });
       } else {
         onError();
@@ -106,7 +106,7 @@
       hdl: {value: ''},
     };
   }
-/*
+
   function getBloodPressureValue(BPObservations, typeOfPressure) {
     var formattedBPObservations = [];
     BPObservations.forEach(function(observation){
@@ -123,8 +123,7 @@
 
     return getQuantityValueAndUnit(formattedBPObservations[0]);
   }
-  */
-/*
+
   function getQuantityValueAndUnit(ob) {
     if (typeof ob != 'undefined' &&
         typeof ob.valueQuantity != 'undefined' &&
@@ -135,8 +134,7 @@
       return undefined;
     }
   }
-  */
-  /*
+ 
   window.drawVisualization = function(p) {
     $('#holder').show();
     $('#loading').hide();
@@ -150,5 +148,5 @@
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
   };
-  */
+
 })(window);
