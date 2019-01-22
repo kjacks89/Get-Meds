@@ -11,9 +11,10 @@
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var patientID = smart.patient.id;
-        alert(patientID);
+        //alert(patientID);
         
         function getOrders(patientID) {
+          alert(patientID);
           var xmlhttp = new XMLHttpRequest();
           xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
