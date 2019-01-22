@@ -11,7 +11,7 @@
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var patientID = smart.patient.id;
-        console.log(patientID);
+        alert(patientID);
         
         function getOrders(patient) {
           var xmlhttp = new XMLHttpRequest();
