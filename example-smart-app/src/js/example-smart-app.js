@@ -10,7 +10,27 @@
     function onReady(smart)  {
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
-        console.log(patient);
+        document.write(patient);
+        /*
+        function getOrders(patient) {
+          var xmlhttp = new XMLHttpRequest();
+          xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              var myObj = JSON.parse(this.responseText);
+              for(var i = 0; i < myObj.entry.length; i++){
+                document.getElementById("orders").innerHTML += myObj.entry[i].resource.text.div;
+                document.getElementById("orders").innerHTML += "<br>"; 
+              }
+            }
+          };
+          var url = "https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/MedicationOrder?patient="
+          url = url + patient + "&status=active";
+          xmlhttp.open("GET", url, true);
+          //xmlhttp.open("GET", "https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/MedicationOrder?patient=2744010&status=active", true);
+          xmlhttp.setRequestHeader("Accept", "application/json+fhir", true)
+          xmlhttp.send();
+        }
+        */
         var pt = patient.read();
         var obv = smart.patient.api.fetchAll({
                     type: 'Observation',
