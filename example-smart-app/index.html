@@ -8,7 +8,7 @@
 <body>
 <h2>List of Medication Orders:</h2>
 <p id="orders"></p>
-
+ 
   <!-- Application-level javascript-->
     <script src='./src/js/example-smart-app.js'></script>
 
@@ -28,5 +28,17 @@
         }
       );
     </script>
+     <script>
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      var myObj = JSON.parse(this.responseText);
+      for(var i = 0; i < myObj.entry.length; i++){
+        document.getElementById("orders").innerHTML += myObj.entry[i].resource.text.div;
+        document.getElementById("orders").innerHTML += "<br>"; 
+    }
+    }
+    };
+  </script>
 </body>
 </html>
