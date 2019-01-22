@@ -35,20 +35,20 @@
             fname = patient.name[0].given.join(' ');
             lname = patient.name[0].family.join(' ');
           }
-          <!--
+          /*
           var height = byCodes('8302-2');
           var systolicbp = getBloodPressureValue(byCodes('55284-4'),'8480-6');
           var diastolicbp = getBloodPressureValue(byCodes('55284-4'),'8462-4');
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
-          -->
+          */
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
           p.gender = gender;
           p.fname = fname;
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
-          <!--
+          /*
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
           }
@@ -59,7 +59,7 @@
 
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
-          -->
+          */
           ret.resolve(p);
         });
       } else {
@@ -85,7 +85,7 @@
       hdl: {value: ''},
     };
   }
-<!--
+/*
   function getBloodPressureValue(BPObservations, typeOfPressure) {
     var formattedBPObservations = [];
     BPObservations.forEach(function(observation){
@@ -102,8 +102,8 @@
 
     return getQuantityValueAndUnit(formattedBPObservations[0]);
   }
-  -->
-<!--
+  */
+/*
   function getQuantityValueAndUnit(ob) {
     if (typeof ob != 'undefined' &&
         typeof ob.valueQuantity != 'undefined' &&
@@ -114,8 +114,8 @@
       return undefined;
     }
   }
-  -->
-<!--
+  */
+
   window.drawVisualization = function(p) {
     $('#holder').show();
     $('#loading').hide();
@@ -129,5 +129,5 @@
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
   };
--->
+
 })(window);
