@@ -13,7 +13,7 @@
         var patientID = smart.patient.id;
         alert(patientID);
         
-        function getOrders(patient) {
+        function getOrders(patientID) {
           var xmlhttp = new XMLHttpRequest();
           xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
@@ -25,7 +25,7 @@
             }
           };
           var url = "https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/MedicationOrder?patient="
-          url = url + JSON.stringify(patient.id) + "&status=active";
+          url = url + patientID + "&status=active";
           xmlhttp.open("GET", url, true);
           //xmlhttp.open("GET", "https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/MedicationOrder?patient=2744010&status=active", true);
           xmlhttp.setRequestHeader("Accept", "application/json+fhir", true)
