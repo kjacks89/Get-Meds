@@ -8,21 +8,7 @@
 <body>
 <h2>List of Medication Orders:</h2>
 <p id="orders"></p>
-<script>
-var xmlhttp = new XMLHttpRequest();
-xmlhttp.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
-    var myObj = JSON.parse(this.responseText);
-    for(var i = 0; i < myObj.entry.length; i++){
-        document.getElementById("orders").innerHTML += myObj.entry[i].resource.text.div;
-        document.getElementById("orders").innerHTML += "<br>"; 
-    }
-  }
-};
-xmlhttp.open("GET", "https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/MedicationOrder?patient=2744010&status=active", true);
-xmlhttp.setRequestHeader("Accept", "application/json+fhir", true)
-xmlhttp.send();
-</script>
+
   <!-- Application-level javascript-->
     <script src='./src/js/example-smart-app.js'></script>
 
